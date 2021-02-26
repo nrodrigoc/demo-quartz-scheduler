@@ -20,8 +20,8 @@ public class QuartzSubmitJobs {
         return createJobDetail(HelloJob.class);
     }
 
-    @Bean(name = "sampleJobTrigger")
-    public SimpleTriggerFactoryBean sampleJobTrigger(@Qualifier("helloJobDetail") JobDetail jobDetail,
+    @Bean(name = "helloJobTrigger")
+    public SimpleTriggerFactoryBean helloJobTrigger(@Qualifier("helloJobDetail") JobDetail jobDetail,
                                                      @Value("${hellojob.frequency}") long frequency) {
         return createTrigger(jobDetail, frequency);
     }
