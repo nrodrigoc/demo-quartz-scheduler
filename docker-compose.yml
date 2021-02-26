@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: demo-quartz-container
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: administracaodb
+    volumes:
+      - /demo/db/data:/var/lib/postgresql
+    ports:
+      - 5433:5433
+    command: -p 5433
